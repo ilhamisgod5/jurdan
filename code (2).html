@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Topup Valorant - Murah & Cepat</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #e0e0e0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    header {
+      background: #0f3460;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #e94560;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px #e94560, 0 0 20px #e94560;
+    }
+
+    header p {
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #f0f0f0;
+      margin: 0;
+      letter-spacing: 0.03em;
+    }
+
+    /* Featured images section */
+    .featured-container {
+      max-width: 1100px;
+      margin: 2rem auto 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1.5rem;
+      align-items: center;
+      border-radius: 16px;
+      background: #1f2a48;
+      box-shadow: 0 6px 25px rgba(232, 69, 96, 0.3);
+      overflow: hidden;
+    }
+
+    .featured-logo {
+      max-width: 100%;
+      border-radius: 12px;
+      filter: drop-shadow(0 5px 5px rgba(233,69,96,0.7));
+    }
+
+    .featured-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+      gap: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .featured-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #2a3a62;
+    }
+
+    .featured-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(233,69,96,0.8);
+    }
+
+    .featured-item img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 140px;
+    }
+
+    main.container {
+      max-width: 1100px;
+      margin: 2rem auto 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 500;
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      color: #f05454;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-shadow: 0 0 6px #f05454;
+    }
+
+    /* Carousel container */
+    .carousel-container {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto 4rem auto;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #1f2a48;
+      box-shadow: 0 6px 25px rgba(232, 69, 96, 0.3);
+      padding: 1rem 2rem;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      will-change: transform;
+    }
+
+    /* Carousel item (package card) */
+    .carousel-card {
+      background: #16213e;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(235, 69, 96, 0.2);
+      color: #fff;
+      flex: 0 0 280px;
+      margin-right: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem 2rem 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .carousel-card:last-child {
+      margin-right: 0;
+    }
+
+    .carousel-card:hover {
+      box-shadow: 0 12px 35px rgba(235, 69, 96, 0.6);
+    }
+
+    .package-image {
+      width: 100%;
+      height: 140px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 6px 15px rgba(233,69,96,0.3);
+      margin-bottom: 1rem;
+    }
+
+    .package-vp {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #f05454;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: 0.12em;
+      text-shadow: 0 0 8px #f05454;
+    }
+
+    .package-price {
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin: 0 0 1.2rem 0;
+      color: #e0e0e0;
+      letter-spacing: 0.1em;
+    }
+
+    .package-desc {
+      font-size: 1rem;
+      color: #b8b8b8;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+      flex-grow: 1;
+    }
+
+    .btn-buy {
+      background-color: #e94560;
+      border: none;
+      border-radius: 30px;
+      padding: 0.8rem 2rem;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(233, 69, 96, 0.6);
+      transition: background-color 0.25s ease, box-shadow 0.3s ease;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-buy:hover {
+      background-color: #a83043;
+      box-shadow: 0 8px 25px rgba(168, 48, 67, 0.9);
+    }
+
+    /* Carousel nav buttons */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(233,69,96,0.9);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    .carousel-arrow:hover {
+      background-color: #ff496a;
+    }
+
+    .carousel-arrow:disabled {
+      background-color: rgba(233,69,96,0.4);
+      cursor: not-allowed;
+    }
+
+    .arrow-left {
+      left: 8px;
+    }
+
+    .arrow-right {
+      right: 8px;
+    }
+
+    /* Payment methods section */
+    .payment-methods {
+      max-width: 1100px;
+      margin: 0 auto 4rem auto;
+      background: #1f2a48;
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(232, 69, 96, 0.3);
+      color: #e0e0e0;
+    }
+
+    .payment-methods h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #f05454;
+      text-shadow: 0 0 6px #f05454;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .payment-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .payment-item {
+      display: flex;
+      align-items: center;
+      background: #2a3a62;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      min-width: 180px;
+      cursor: default;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .payment-item:hover {
+      background-color: #e94560;
+      box-shadow: 0 12px 30px rgba(233,69,96,0.8);
+      color: white;
+    }
+
+    .payment-icon {
+      width: 48px;
+      height: 48px;
+      margin-right: 1rem;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.4));
+    }
+
+    .payment-name {
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.05em;
+      color: #e0e0e0;
+    }
+
+    footer {
+      background: #0f3460;
+      color: #ddd;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      box-shadow: inset 0 20px 30px -20px rgba(0,0,0,0.9);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    footer a {
+      color: #e94560;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .featured-container {
+        grid-template-columns: 1fr;
+      }
+      .featured-gallery {
+        grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+        padding-left: 0;
+        gap: 1rem;
+      }
+      .payment-list {
+        justify-content: center;
+      }
+      .carousel-card {
+        flex: 0 0 240px;
+        margin-right: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .package-vp {
+        font-size: 2.2rem;
+      }
+      .btn-buy {
+        font-size: 1rem;
+        padding: 0.75rem 1.6rem;
+      }
+      .payment-item {
+        min-width: 140px;
+      }
+      .payment-icon {
+        width: 36px;
+        height: 36px;
+      }
+      .payment-name {
+        font-size: 1rem;
+      }
+      .carousel-card {
+        flex: 0 0 220px;
+        margin-right: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Topup Valorant</h1>
+    <p>Murah, Cepat, & Terpercaya</p>
+  </header>
+
+  <section class="featured-container container" aria-label="Featured Valorant Content">
+    <img
+      class="featured-logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Valorant_logo.svg/2560px-Valorant_logo.svg.png"
+      alt="Logo Valorant" />
+    <div class="featured-gallery" aria-label="Valorant Characters, Weapons, and Skins">
+      <!-- Characters -->
+      <div class="featured-item" tabindex="0" role="img" aria-label="Viper, Valorant Character">
+        <img src="https://cdn1.epicgames.com/valorant/item/Viper/ShopHeadShot_1920x1080-dd6a496e.jpg" alt="Viper, Valorant Character" />
+      </div>
+      <div class="featured-item" tabindex="0" role="img" aria-label="Phoenix, Valorant Character">
+        <img src="https://cdn1.epicgames.com/valorant/item/Phoenix/ShopHeadShot_1920x1080-5e753a04.jpg" alt="Phoenix, Valorant Character" />
+      </div>
+      <div class="featured-item" tabindex="0" role="img" aria-label="Jett, Valorant Character">
+        <img src="https://cdn1.epicgames.com/valorant/item/Jett/ShopHeadShot_1920x1080-6acc6716.jpg" alt="Jett, Valorant Character" />
+      </div>
+
+      <!-- Weapons -->
+      <div class="featured-item" tabindex="0" role="img" aria-label="Vandal Rifle, Valorant Weapon">
+        <img src="https://media.valorant-api.com/weapons/weapon_vandal/skinchroma.png" alt="Vandal Rifle, Valorant Weapon" />
+      </div>
+      <div class="featured-item" tabindex="0" role="img" aria-label="Phantom Rifle, Valorant Weapon">
+        <img src="https://media.valorant-api.com/weapons/weapon_phantom/skinchroma.png" alt="Phantom Rifle, Valorant Weapon" />
+      </div>
+      <div class="featured-item" tabindex="0" role="img" aria-label="Operator Sniper, Valorant Weapon">
+        <img src="https://media.valorant-api.com/weapons/weapon_operator/skinchroma.png" alt="Operator Sniper, Valorant Weapon" />
+      </div>
+
+      <!-- Weapon Skins -->
+      <div class="featured-item" tabindex="0" role="img" aria-label="Prime Vandal, Valorant Weapon Skin">
+        <img src="https://media.valorant-api.com/weaponskinlevels/f1be43fa-4da7-b297-8bb9-d5f2c23be7bb/level_1/chromaimages/largeicon.png" alt="Prime Vandal, Valorant Weapon Skin" />
+      </div>
+      <div class="featured-item" tabindex="0" role="img" aria-label="Elderflame Operator, Valorant Weapon Skin">
+        <img src="https://media.valorant-api.com/weaponskinlevels/d003373e-4a80-cc73-75b7-84aa9f785be3/level_1/chromaimages/largeicon.png" alt="Elderflame Operator, Valorant Weapon Skin" />
+      </div>
+      <div class="featured-item" tabindex="0" role="img" aria-label="Glitchpop Phantom, Valorant Weapon Skin">
+        <img src="https://media.valorant-api.com/weaponskinlevels/75630f64-4123-910a-6f83-12da229e1c18/level_1/chromaimages/largeicon.png" alt="Glitchpop Phantom, Valorant Weapon Skin" />
+      </div>
+    </div>
+  </section>
+
+  <main class="container" aria-label="Valorant Topup Packages">
+    <h2 class="section-title">Paket Topup Valorant Points</h2>
+    <div class="carousel-container" aria-label="Paket Topup Valorant Points Carousel">
+      <button class="carousel-arrow arrow-left" aria-label="Previous Paket" id="btnPrev">&#10094;</button>
+      <div class="carousel-track" id="carouselTrack" tabindex="0">
+        <!-- Package Cards -->
+        <div class="carousel-card" onclick="buyPackage(125)" role="button" aria-pressed="false" tabindex="0" aria-label="125 Valorant Points package, price Rp 20.000">
+          <img class="package-image" src="https://static.wikia.nocookie.net/valorant/images/c/c9/125_Valorant_Points.png" alt="125 Valorant Points" />
+          <p class="package-vp">125 VP</p>
+          <p class="package-price">Rp 20.000</p>
+          <p class="package-desc">Paket kecil cocok untuk pemula dan isi ulang cepat.</p>
+          <button class="btn-buy" aria-label="Beli paket 125 Valorant Points">Beli Sekarang</button>
+        </div>
+
+        <div class="carousel-card" onclick="buyPackage(325)" role="button" aria-pressed="false" tabindex="0" aria-label="325 Valorant Points package, price Rp 50.000">
+          <img class="package-image" src="https://static.wikia.nocookie.net/valorant/images/1/18/325_Valorant_Points.png" alt="325 Valorant Points" />
+          <p class="package-vp">325 VP</p>
+          <p class="package-price">Rp 50.000</p>
+          <p class="package-desc">Lebih banyak VP untuk upgrade dan skin favorit Anda.</p>
+          <button class="btn-buy" aria-label="Beli paket 325 Valorant Points">Beli Sekarang</button>
+        </div>
+
+        <div class="carousel-card" onclick="buyPackage(540)" role="button" aria-pressed="false" tabindex="0" aria-label="540 Valorant Points package, price Rp 80.000">
+          <img class="package-image" src="https://static.wikia.nocookie.net/valorant/images/4/4a/540_Valorant_Points.png" alt="540 Valorant Points" />
+          <p class="package-vp">540 VP</p>
+          <p class="package-price">Rp 80.000</p>
+          <p class="package-desc">Paket sedang untuk banyak pilihan item di Valorant.</p>
+          <button class="btn-buy" aria-label="Beli paket 540 Valorant Points">Beli Sekarang</button>
+        </div>
+
+        <div class="carousel-card" onclick="buyPackage(1080)" role="button" aria-pressed="false" tabindex="0" aria-label="1080 Valorant Points package, price Rp 150.000">
+          <img class="package-image" src="https://static.wikia.nocookie.net/valorant/images/3/3e/1080_Valorant_Points.png" alt="1080 Valorant Points" />
+          <p class="package-vp">1080 VP</p>
+          <p class="package-price">Rp 150.000</p>
+          <p class="package-desc">Untuk kamu yang ingin koleksi skin premium dan lebih banyak VP.</p>
+          <button class="btn-buy" aria-label="Beli paket 1080 Valorant Points">Beli Sekarang</button>
+        </div>
+
+        <div class="carousel-card" onclick="buyPackage(2160)" role="button" aria-pressed="false" tabindex="0" aria-label="2160 Valorant Points package, price Rp 290.000">
+          <img class="package-image" src="https://static.wikia.nocookie.net/valorant/images/8/8b/2160_Valorant_Points.png" alt="2160 Valorant Points" />
+          <p class="package-vp">2160 VP</p>
+          <p class="package-price">Rp 290.000</p>
+          <p class="package-desc">Paket besar untuk top-up besar dan dapatkan bonus ekstra.</p>
+          <button class="btn-buy" aria-label="Beli paket 2160 Valorant Points">Beli Sekarang</button>
+        </div>
+
+        <div class="carousel-card" onclick="buyPackage(5400)" role="button" aria-pressed="false" tabindex="0" aria-label="5400 Valorant Points package, price Rp 720.000">
+          <img class="package-image" src="https://static.wikia.nocookie.net/valorant/images/7/71/5400_Valorant_Points.png" alt="5400 Valorant Points" />
+          <p class="package-vp">5400 VP</p>
+          <p class="package-price">Rp 720.000</p>
+          <p class="package-desc">Paket sangat besar untuk koleksi skin dan item lengkap.</p>
+          <button class="btn-buy" aria-label="Beli paket 5400 Valorant Points">Beli Sekarang</button>
+        </div>
+
+        <div class="carousel-card" onclick="buyPackage(10800)" role="button" aria-pressed="false" tabindex="0" aria-label="10800 Valorant Points package, price Rp 1.400.000">
+          <img class="package-image" src="https://static.wikia.nocookie.net/valorant/images/d/dc/10800_Valorant_Points.png" alt="10800 Valorant Points" />
+          <p class="package-vp">10800 VP</p>
+          <p class="package-price">Rp 1.400.000</p>
+          <p class="package-desc">Paket maksimal bagi kolektor serius dan hadiah spesial.</p>
+          <button class="btn-buy" aria-label="Beli paket 10800 Valorant Points">Beli Sekarang</button>
+        </div>
+      </div>
+      <button class="carousel-arrow arrow-right" aria-label="Next Paket" id="btnNext">&#10095;</button>
+    </div>
+  </main>
+
+  <section class="payment-methods" aria-label="Metode Pembayaran">
+    <h3>Metode Pembayaran</h3>
+    <div class="payment-list">
+
+      <div class="payment-item" aria-label="Bank Transfer BCA">
+        <img src="https://img.icons8.com/color/48/000000/bank-building.png" alt="Bank" class="payment-icon" />
+        <span class="payment-name">Transfer Bank BCA</span>
+      </div>
+
+      <div class="payment-item" aria-label="Bank Transfer Mandiri">
+        <img src="https://img.icons8.com/color/48/000000/bank-building.png" alt="Bank" class="payment-icon" />
+        <span class="payment-name">Transfer Bank Mandiri</span>
+      </div>
+
+      <div class="payment-item" aria-label="GoPay">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/GoPay_Logo.svg" alt="GoPay" class="payment-icon" />
+        <span class="payment-name">GoPay</span>
+      </div>
+
+      <div class="payment-item" aria-label="OVO">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/OVO_logo.svg" alt="OVO" class="payment-icon" />
+        <span class="payment-name">OVO</span>
+      </div>
+
+      <div class="payment-item" aria-label="Dana">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/DANA_Logo_horizontal.svg" alt="Dana" class="payment-icon" />
+        <span class="payment-name">Dana</span>
+      </div>
+
+      <div class="payment-item" aria-label="Visa Card">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa Card" class="payment-icon" />
+        <span class="payment-name">Visa / Mastercard</span>
+      </div>
+
+      <div class="payment-item" aria-label="PayPal">
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" class="payment-icon" />
+        <span class="payment-name">PayPal</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2024 Topup Valorant. All rights reserved. Kontak: <a href="mailto:support@topupvalorant.com" aria-label="Email support topup valorant">support@topupvalorant.com</a>
+  </footer>
+
+  <script>
+    function buyPackage(vpAmount) {
+      alert('Terima kasih telah memilih paket ' + vpAmount + ' VP! Silakan hubungi admin untuk melakukan pembayaran dan proses top-up.');
+    }
+
+    // Carousel functionality
+    const track = document.getElementById("carouselTrack");
+    const btnPrev = document.getElementById("btnPrev");
+    const btnNext = document.getElementById("btnNext");
+    const cardWidth = 295; // card width + margin-right
+
+    let currentSlide = 0;
+
+    btnNext.addEventListener("click", () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if ((currentSlide + 1) * cardWidth <= maxScroll) {
+        currentSlide++;
+        track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+      }
+      updateButtons();
+    });
+
+    btnPrev.addEventListener("click", () => {
+      if (currentSlide > 0) {
+        currentSlide--;
+        track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+      }
+      updateButtons();
+    });
+
+    function updateButtons() {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      btnPrev.disabled = currentSlide === 0;
+      btnNext.disabled = (currentSlide + 1) * cardWidth > maxScroll;
+    }
+
+    updateButtons();
+
+    // Dragging variables
+    let isDragging = false;
+    let startX;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+
+    // Mouse/touch down event - start dragging
+    track.addEventListener('mousedown', dragStart);
+    track.addEventListener('touchstart', dragStart, { passive: true });
+
+    // Mouse/touch move event
+    track.addEventListener('mousemove', dragMove);
+    track.addEventListener('touchmove', dragMove, { passive: true });
+
+    // Mouse/touch up / leave event - stop dragging
+    track.addEventListener('mouseup', dragEnd);
+    track.addEventListener('mouseleave', dragEnd);
+    track.addEventListener('touchend', dragEnd);
+
+    function dragStart(event) {
+      isDragging = true;
+      startX = getPositionX(event);
+      animationID = requestAnimationFrame(animation);
+      track.style.cursor = 'grabbing';
+    }
+
+    function dragMove(event) {
+      if (!isDragging) return;
+      const currentPosition = getPositionX(event);
+      const diff = currentPosition - startX;
+      currentTranslate = prevTranslate + diff;
+    }
+
+    function dragEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      cancelAnimationFrame(animationID);
+
+      // Boundaries
+      const maxTranslate = 0;
+      const minTranslate = -(track.scrollWidth - track.clientWidth);
+
+      if (currentTranslate > maxTranslate) {
+        currentTranslate = maxTranslate;
+      } else if (currentTranslate < minTranslate) {
+        currentTranslate = minTranslate;
+      }
+
+      // Snap to nearest card
+      const snapIndex = Math.round(Math.abs(currentTranslate) / cardWidth);
+      currentSlide = snapIndex;
+
+      currentTranslate = -snapIndex * cardWidth;
+      setSliderPosition(currentTranslate);
+      prevTranslate = currentTranslate;
+      updateButtons();
+
+      track.style.cursor = 'grab';
+    }
+
+    function getPositionX(event) {
+      return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+      setSliderPosition(currentTranslate);
+      if (isDragging) requestAnimationFrame(animation);
+    }
+
+    function setSliderPosition(position) {
+      track.style.transform = `translateX(${position}px)`;
+    }
+
+    // Initialize cursor style
+    track.style.cursor = 'grab';
+  </script>
+</body>
+</html>
+
